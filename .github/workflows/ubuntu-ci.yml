@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        java-version: [21]  # 定义要测试的JDK版本
+        java-version: [21]  # 瀹氫箟瑕佹祴璇曠殑JDK鐗堟湰
 
     steps:
       - uses: actions/checkout@v2
