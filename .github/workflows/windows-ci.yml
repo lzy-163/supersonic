@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: ${{ matrix.java-version }}
-          distribution: 'adopt'  # You might need to change this if 'adopt' doesn't support JDK 21
+          distribution: 'temurin'  # 'adopt' does not support JDK 21
 
       - name: Cache Maven packages
         uses: actions/cache@v2
