@@ -23,12 +23,12 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: ${{ matrix.java-version }}
-          distribution: 'adopt'  # You might need to change this if 'adopt' doesn't support JDK 21
+          distribution: 'temurin'  # Changed from 'adopt' to 'temurin' as AdoptOpenJDK is deprecated and Temurin supports JDK 21
 
       - name: Cache Maven packages
         uses: actions/cache@v2
         with:
-          path: ~\.m2  # Windows uses a backslash for paths
+          path: ~/.m2  # Use forward slash for cross-platform compatibility
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
