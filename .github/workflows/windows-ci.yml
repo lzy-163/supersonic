@@ -28,7 +28,7 @@ jobs:
       - name: Cache Maven packages
         uses: actions/cache@v2
         with:
-          path: ~\.m2  # Windows uses a backslash for paths
+          path: ~/.m2  # Use forward slash so the path is valid in YAML and on Windows runners
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
