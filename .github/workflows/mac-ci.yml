@@ -23,12 +23,12 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: ${{ matrix.java-version }}
-          distribution: 'adopt'
+          distribution: 'temurin'
 
       - name: Cache Maven packages
         uses: actions/cache@v2
         with:
-          path: ~/Library/Caches/Maven  # macOS Maven cache path
+          path: ~/.m2/repository
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
